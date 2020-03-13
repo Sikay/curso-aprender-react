@@ -8,18 +8,27 @@ class Text extends Component {
   // render solo puede devolver un elemento por lo que todos los elementos
   // que utilicemos tendran que estar envueltos
   render() {
+    // Destructuracion
+    const {
+      arrayOfNumbers,
+      boolean,
+      number,
+      multiply,
+      objectWithInfo,
+      text
+    } = this.props;
     // Podemos renderizar variables
-    const textoSegunBool = this.props.boolean ? "Verdadero" : "Falso";
-    const mappedNumbers = this.props.arrayOfNumbers.map(n => n * 2);
+    const textoSegunBool = boolean ? "Verdadero" : "Falso";
+    const mappedNumbers = arrayOfNumbers.map(multiply);
     return (
       <div>
-        <p>{this.props.text}</p>
-        <p>{this.props.number}</p>
-        <p>{this.props.boolean}</p>
-        <p>{JSON.stringify(this.props.boolean)}</p>
+        <p>{text}</p>
+        <p>{number}</p>
+        <p>{boolean}</p>
+        <p>{JSON.stringify(boolean)}</p>
         <p>{textoSegunBool}</p>
         <p>{mappedNumbers.join(", ")}</p>
-        <p>{this.props.objectWithInfo.key}</p>
+        <p>{objectWithInfo.key}</p>
       </div>
     );
   }
@@ -36,6 +45,7 @@ class App extends Component {
             arrayOfNumbers={[2, 3, 10]}
             boolean={true}
             number={2}
+            multiply={number => number * 4}
             objectWithInfo={{ key: "value", key2: "otherValue" }}
             text="Esto es un texto"
           />
