@@ -4,6 +4,10 @@ class Contador extends Component {
   constructor() {
     super();
     this.state = { contador: 1 };
+    //setState es asincrono
+    setInterval(() => {
+      this.setState({ contador: this.state.contador + 1 });
+    }, 1000);
   }
   render() {
     return <span>{this.state.contador}</span>;
