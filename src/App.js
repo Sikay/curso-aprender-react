@@ -8,6 +8,7 @@ class Text extends Component {
   // render solo puede devolver un elemento por lo que todos los elementos
   // que utilicemos tendran que estar envueltos
   render() {
+    // Las props son inmutables
     // Destructuracion
     const {
       arrayOfNumbers,
