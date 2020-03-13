@@ -10,7 +10,15 @@ class Contador extends Component {
     }, 1000);
   }
   render() {
-    return <span>{this.state.contador}</span>;
+    return <ContadorNumero numero={this.state.contador} />;
+  }
+}
+
+class ContadorNumero extends Component {
+  render() {
+    // Propagacion unidireccional de padres a hijos
+    console.log("ContadorNumero render()");
+    return <span>{this.props.numero}</span>;
   }
 }
 
