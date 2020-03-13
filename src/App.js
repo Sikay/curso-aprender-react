@@ -17,7 +17,8 @@ class Text extends Component {
       multiply,
       objectWithInfo,
       text,
-      title
+      title,
+      propPorDefecto
     } = this.props;
     // Podemos renderizar variables
     const textoSegunBool = boolean ? "Verdadero" : "Falso";
@@ -25,6 +26,7 @@ class Text extends Component {
     return (
       <div>
         {title}
+        <p>{propPorDefecto}</p>
         <p>{text}</p>
         <p>{number}</p>
         <p>{boolean}</p>
@@ -36,6 +38,10 @@ class Text extends Component {
     );
   }
 }
+
+Text.defaultProps = {
+  propPorDefecto: "Texto por defecto"
+};
 
 class App extends Component {
   render() {
