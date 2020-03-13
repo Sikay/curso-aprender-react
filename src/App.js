@@ -15,13 +15,15 @@ class Text extends Component {
       number,
       multiply,
       objectWithInfo,
-      text
+      text,
+      title
     } = this.props;
     // Podemos renderizar variables
     const textoSegunBool = boolean ? "Verdadero" : "Falso";
     const mappedNumbers = arrayOfNumbers.map(multiply);
     return (
       <div>
+        {title}
         <p>{text}</p>
         <p>{number}</p>
         <p>{boolean}</p>
@@ -48,6 +50,7 @@ class App extends Component {
             multiply={number => number * 4}
             objectWithInfo={{ key: "value", key2: "otherValue" }}
             text="Esto es un texto"
+            title={<h1>Este es el titulo</h1>}
           />
           <a
             className="App-link"
