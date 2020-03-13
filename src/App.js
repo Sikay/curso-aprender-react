@@ -1,12 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+
+const Hello = props => <h2>{props.title}</h2>;
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <Hello title="Welcome to React" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
