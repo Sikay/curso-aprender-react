@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
 class Contador extends Component {
-  constructor() {
-    super();
-    this.state = { contador: 1 };
+  constructor(props) {
+    super(props);
+    this.state = { contador: this.props.contadorInicial };
     //setState es asincrono
     setInterval(() => {
       this.setState({ contador: this.state.contador + 1 });
@@ -13,6 +13,10 @@ class Contador extends Component {
     return <ContadorNumero numero={this.state.contador} />;
   }
 }
+
+Contador.defaultProps = {
+  contadorInicial: 0
+};
 
 class ContadorNumero extends Component {
   render() {
@@ -27,7 +31,7 @@ class State extends Component {
     return (
       <div>
         <p>Primer componente con state</p>
-        <Contador />
+        <Contador contadorInicial={100} />
       </div>
     );
   }
