@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 
 class Forms extends Component {
-  handleClick(e) {
+  handleClick = e => {
     e.preventDefault();
-    const name = document.getElementById("name").value;
+    // Las ref se suelen utilizar cuando queremos integrar una libreria externa
+    // pero nuestro código dejara de ser declarativo por lo que si no tenemos que integrar
+    // hay formas mas correctas que utilizar referencias
+    const name = this.inputName.value;
     const email = document.getElementById("twitter").value;
     console.log({ name, email });
-  }
+  };
   render() {
     return (
       <div>
@@ -18,6 +21,7 @@ class Forms extends Component {
               id="name"
               name="userName"
               placeholder="Introduce el nombre"
+              ref={inputElement => (this.inputName = inputElement)}
             />
           </p>
           <p>
