@@ -10,13 +10,39 @@ class Box extends Component {
   }
 }
 
+class Article extends Component {
+  render() {
+    return (
+      <section>
+        <h2>{this.props.title}</h2>
+        <p>
+          <em>Escrito por {this.props.author}</em>
+        </p>
+        <Box>{this.props.date}</Box>
+        <article>{this.props.children}</article>
+      </section>
+    );
+  }
+}
+
 class Children extends Component {
   render() {
     return (
       <div>
         <h4>Children props</h4>
-        <Box>Box children</Box>
-        <Box>Otro Box con otro children</Box>
+        <Article
+          author="Anonimo"
+          date={new Date().toLocaleDateString()}
+          title="Articulo sobre la prop children"
+        >
+          <p>
+            El contenido que envolvemos dentro del componente Article será
+            enviado al componente como this.props.children
+          </p>
+          <strong>
+            Y mantiene las etiquetas y componentes que hayamos añadido dentro
+          </strong>
+        </Article>
       </div>
     );
   }
