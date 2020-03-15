@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Forms from "./sections/Forms";
+import Forms from "../sections/Forms";
 
 class Formulario extends Component {
   constructor() {

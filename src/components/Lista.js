@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import cars from "./data/cars.json";
+import cars from "../data/cars.json";
 
 class CarItem extends Component {
   render() {

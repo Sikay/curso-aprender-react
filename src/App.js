@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./App.css";
-import HelloWorld from "./HelloWorld";
-import State from "./State";
-import Condicional from "./Condicional";
-import Lista from "./Lista";
-import Formulario from "./Formulario";
+import HelloWorld from "./components/HelloWorld";
+import State from "./components/State";
+import Condicional from "./components/Condicional";
+import Lista from "./components/Lista";
+import Formulario from "./components/Formulario";
 
 class App extends Component {
   render() {
