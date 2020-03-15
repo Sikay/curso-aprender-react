@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 class Forms extends Component {
-  handleClick = e => {
+  handleSubmit = e => {
     e.preventDefault();
     // Las ref se suelen utilizar cuando queremos integrar una libreria externa
     // pero nuestro código dejara de ser declarativo por lo que si no tenemos que integrar
@@ -10,11 +10,17 @@ class Forms extends Component {
     const email = document.getElementById("twitter").value;
     console.log({ name, email });
   };
+
+  handleChange(e) {
+    console.log("handleChange");
+    console.log(e.target.checked);
+  }
+
   render() {
     return (
       <div>
         <h4>Formulario</h4>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <p>
             <label htmlFor="name">Nombre: </label>
             <input
@@ -32,7 +38,13 @@ class Forms extends Component {
               placeholder="Introduce tu Twitter"
             />
           </p>
-          <button onClick={this.handleClick}>Enviar</button>
+          <p>
+            <label>
+              <input onChange={this.handleChange} type="checkbox" />
+              Accepted terms
+            </label>
+          </p>
+          <button>Enviar</button>
         </form>
       </div>
     );
