@@ -1,6 +1,14 @@
 import React, { Component } from "react";
 
 class Forms extends Component {
+  constructor() {
+    super();
+    this.state = {
+      userName: "",
+      twitterAcount: "@",
+      terms: true
+    };
+  }
   handleSubmit = e => {
     e.preventDefault();
     // Las ref se suelen utilizar cuando queremos integrar una libreria externa
@@ -8,13 +16,23 @@ class Forms extends Component {
     // hay formas mas correctas que utilizar referencias
     const name = this.inputName.value;
     const email = document.getElementById("twitter").value;
-    console.log({ name, email });
+    console.log(this.state);
   };
 
-  handleChange(e) {
-    console.log("handleChange");
+  handleInputChange = e => {
+    const { value, name } = e.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleTermsChange = e => {
+    console.log("handleTermsChange");
     console.log(e.target.checked);
-  }
+    this.setState({
+      terms: e.target.checked
+    });
+  };
 
   render() {
     return (
@@ -28,6 +46,8 @@ class Forms extends Component {
               name="userName"
               placeholder="Introduce el nombre"
               ref={inputElement => (this.inputName = inputElement)}
+              value={this.state.userName}
+              onChange={this.handleInputChange}
             />
           </p>
           <p>
@@ -36,11 +56,18 @@ class Forms extends Component {
               id="twitter"
               name="twitterAcount"
               placeholder="Introduce tu Twitter"
+              value={this.state.twitterAcount}
+              onChange={this.handleInputChange}
             />
           </p>
           <p>
             <label>
-              <input onChange={this.handleChange} type="checkbox" />
+              <input
+                name="terms"
+                onChange={this.handleTermsChange}
+                checked={this.state.terms}
+                type="checkbox"
+              />
               Accepted terms
             </label>
           </p>
