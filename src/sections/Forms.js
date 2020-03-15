@@ -13,7 +13,7 @@ class Forms extends Component {
         <h4>Formulario</h4>
         <form>
           <p>
-            <label>Nombre: </label>
+            <label htmlFor="name">Nombre: </label>
             <input
               id="name"
               name="userName"
@@ -21,7 +21,7 @@ class Forms extends Component {
             />
           </p>
           <p>
-            <label>Twitter: </label>
+            <label htmlFor="twitter">Twitter: </label>
             <input
               id="twitter"
               name="twitterAcount"
