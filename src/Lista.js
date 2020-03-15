@@ -1,4 +1,23 @@
 import React, { Component } from "react";
+import cars from "./data/cars.json";
+
+class CarItem extends Component {
+  render() {
+    const car = this.props.car;
+    return (
+      <li key={car.id}>
+        <p>
+          <strong>Nombre: </strong>
+          {car.name}
+        </p>
+        <p>
+          <strong>Marca: </strong>
+          {car.company}
+        </p>
+      </li>
+    );
+  }
+}
 
 class Lista extends Component {
   render() {
@@ -9,6 +28,12 @@ class Lista extends Component {
         {numbers.map((number, index) => (
           <p key={index}>Numero: {number}</p>
         ))}
+        <h4>Trabajando con listas de objetos</h4>
+        <ul>
+          {cars.map(car => (
+            <CarItem key={car.id} car={car} />
+          ))}
+        </ul>
       </div>
     );
   }
