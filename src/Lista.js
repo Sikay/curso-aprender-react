@@ -30,7 +30,8 @@ class Lista extends Component {
         ))}
         <h4>Trabajando con listas de objetos</h4>
         <ul>
-          {cars.map(car => (
+          {// key debe estar en el map, no es accesible como prop con el atributo key
+          cars.map(car => (
             <CarItem key={car.id} car={car} />
           ))}
         </ul>
