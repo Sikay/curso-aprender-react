@@ -6,8 +6,9 @@ import State from "./components/State";
 import Condicional from "./components/Condicional";
 import Lista from "./components/Lista";
 import Formulario from "./components/Formulario";
-*/
 import Children from "./components/Children";
+*/
+import FetchExample from "./components/FetchExample";
 
 class App extends Component {
   render() {
@@ -19,8 +20,9 @@ class App extends Component {
         <Condicional />
         <Lista />
         <Formulario />
-      */}
         <Children />
+      */}
+        <FetchExample />
       </div>
     );
   }
