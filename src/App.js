@@ -8,9 +8,10 @@ import Lista from "./components/Lista";
 import Formulario from "./components/Formulario";
 import Children from "./components/Children";
 import FetchExample from "./components/FetchExample";
+import EjemploDeCicloDeActualizacion from "./components/EjemploDeCicloDeActualizacion";
 */
 
-import EjemploDeCicloDeActualizacion from "./components/EjemploDeCicloDeActualizacion";
+import EjemploDeComponentWillUnmount from "./components/EjemploDeComponentWillUnmount";
 
 class App extends Component {
   render() {
@@ -24,9 +25,10 @@ class App extends Component {
         <Formulario />
         <Children />
         <FetchExample />
+        <EjemploDeCicloDeActualizacion />
       */}
 
-        <EjemploDeCicloDeActualizacion />
+        <EjemploDeComponentWillUnmount />
       </div>
     );
   }

@@ -47,6 +47,23 @@ class AnimalImages extends Component {
     return img;
   }
 
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    snapshot.animate(
+      [
+        {
+          filter: "blur(2px)"
+        },
+        {
+          filter: "blur(0px)"
+        }
+      ],
+      {
+        duration: 1500,
+        easing: "ease"
+      }
+    );
+  }
+
   render() {
     return (
       <div>
