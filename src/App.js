@@ -9,9 +9,10 @@ import Formulario from "./components/Formulario";
 import Children from "./components/Children";
 import FetchExample from "./components/FetchExample";
 import EjemploDeCicloDeActualizacion from "./components/EjemploDeCicloDeActualizacion";
+import EjemploDeComponentWillUnmount from "./components/EjemploDeComponentWillUnmount";
 */
 
-import EjemploDeComponentWillUnmount from "./components/EjemploDeComponentWillUnmount";
+import EjemploDeComponenteDidCatch from "./components/EjemploDeComponenteDidCatch";
 
 class App extends Component {
   render() {
@@ -26,9 +27,10 @@ class App extends Component {
         <Children />
         <FetchExample />
         <EjemploDeCicloDeActualizacion />
+        <EjemploDeComponentWillUnmount />
       */}
 
-        <EjemploDeComponentWillUnmount />
+        <EjemploDeComponenteDidCatch />
       </div>
     );
   }
