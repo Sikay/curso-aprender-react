@@ -27,6 +27,26 @@ class AnimalImages extends Component {
     return this.props.animal !== props.animal;
   }
 
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    const img = document.querySelector("img");
+    img.animate(
+      [
+        {
+          filter: "blur(0px)"
+        },
+        {
+          filter: "blur(2px)"
+        }
+      ],
+      {
+        duration: 500,
+        easing: "ease"
+      }
+    );
+
+    return img;
+  }
+
   render() {
     return (
       <div>
