@@ -23,6 +23,10 @@ class AnimalImages extends Component {
     return null;
   }
 
+  shouldComponentUpdate(props) {
+    return this.props.animal !== props.animal;
+  }
+
   render() {
     return (
       <div>
@@ -45,7 +49,7 @@ class EjemploDeCicloDeActualizacion extends Component {
   _renderAnimalButton(animal) {
     return (
       <button
-        disabled={animal === this.state.animal}
+        // disabled={animal === this.state.animal}
         key={animal}
         onClick={() => this.handleClick(animal)}
       >
@@ -57,7 +61,7 @@ class EjemploDeCicloDeActualizacion extends Component {
   render() {
     return (
       <div>
-        <h4>Ciclo de Actualizacion, Ejemplo de: ComponentWilReceiveProps() </h4>
+        <h4>Ciclo de Actualizacion, Ejemplo de: ShouldComponentUpdate() </h4>
         {ANIMALS.map(animalKey => this._renderAnimalButton(animalKey))}
         <AnimalImages animal={this.state.animal} />
       </div>
