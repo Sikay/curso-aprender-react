@@ -7,8 +7,10 @@ import Condicional from "./components/Condicional";
 import Lista from "./components/Lista";
 import Formulario from "./components/Formulario";
 import Children from "./components/Children";
-*/
 import FetchExample from "./components/FetchExample";
+*/
+
+import EjemploDeCicloDeActualizacion from "./components/EjemploDeCicloDeActualizacion";
 
 class App extends Component {
   render() {
@@ -21,8 +23,10 @@ class App extends Component {
         <Lista />
         <Formulario />
         <Children />
-      */}
         <FetchExample />
+      */}
+
+        <EjemploDeCicloDeActualizacion />
       </div>
     );
   }
